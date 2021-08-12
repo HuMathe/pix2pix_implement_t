@@ -14,7 +14,7 @@ def netModel(config):
 		model.train()
 	else:
 		model.eval()
-	return 
+	return model
 
 def collect_model(config):
 	if config['netG_type'] == 'Unet':
@@ -72,12 +72,12 @@ class modelGAN():
 		# train with fake image
 		fake_input = torch.cat((x, z), 1)
 		fake_output = self.netD(fake_input.detach())
-		lD_fake = self.criterion_GAN(fake_output, False)
+		lD_fake = self.criterion_GAN(fake_output, torch.tensor(0.0).expand_as(fake_output).to(self.device))
 
 		# train with real image
 		real_input = torch.cat((x, y), 1)
 		real_output = self.netD(real_input)
-		lD_real = self.criterion_GAN(real_output, True)
+		lD_real = self.criterion_GAN(real_output, torch.tensor(1.0).expand_as(real_output).to(self.device))
 
 		lD = (lD_fake + lD_real) * 0.5
 		lD.backward()
@@ -90,8 +90,8 @@ class modelGAN():
 
 		fake_input = torch.cat((x, z), 1)
 		fake_output = self.netD(fake_input)
-		lG = self.criterion_GAN(fake_output, True)
-		lGL1 = self.criterion_L1(fake_output, y) * self.lambda_
+		lG = self.criterion_GAN(fake_output, torch.tensor(1.0).expand_as(fake_output).to(self.device))
+		lGL1 = self.criterion_L1(z, y) * self.lambda_
 		lossG = lG + lGL1
 		lossG.backward()
 		self.optimizerG.step()
