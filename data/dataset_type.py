@@ -1,6 +1,6 @@
 import cv2
 import torch
-from methods import image_set
+from data.methods import image_set
 from torchvision import transforms
 class typeI_dataset(torch.utils.data.Dataset):
 	def __init__(self, config):

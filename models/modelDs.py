@@ -1,14 +1,14 @@
 import torch 
 import numpy as np
 from torch import nn 
-from methods import weight_init
+from models.methods import weight_init
 
 class D_Markovian(nn.Module): # Markovian discriminator
 	def __init__(self, config):
-		input_c = config['input_channel']
-		output_c = config['output_channel']
+		input_c = config['in_channels']
+		output_c = config['out_channels']
 		ndf = config['ndf']
-		n_layers = config['layer_number']
+		n_layers = config['n_layers']
 		super(D_Markovian, self).__init__()
 		self.layer = nn.Sequential(nn.Conv2d(input_c + output_c, ndf, 4, stride = 2, padding = 1),
 								   nn.LeakyReLU(0.2, True))

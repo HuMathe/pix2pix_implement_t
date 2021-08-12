@@ -1,7 +1,7 @@
 import torch
-from modelGs import *
-from modelDs import *
-from methods import rule_lr, rule_lr_set, set_requires_grad
+from models.modelGs import *
+from models.modelDs import *
+from models.methods import rule_lr, rule_lr_set, set_requires_grad
 
 def netModel(config):
 	"""

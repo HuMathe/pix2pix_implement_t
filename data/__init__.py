@@ -1,5 +1,5 @@
 import torch
-from dataset_type import *
+from data.dataset_type import *
 def fetch_data(config): # create a dataloader
 	"""
 		1. create a dataset (a specific class)
@@ -10,7 +10,7 @@ def fetch_data(config): # create a dataloader
 				dataset, 
 				batch_size = config['batch_size'], 
 				shuffle = config['istrain'], 
-				num_worker = config['num_workers']
+				num_workers = config['num_workers']
 			)
 
 def collect_data(config):

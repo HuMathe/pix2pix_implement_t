@@ -1,4 +1,4 @@
 def print_config(config):
-    for a, b in config:
-        print("%10s |%10s"%(a, b))
+    for a, b in config.items():
+        print("%20s : %s"%(a, b))
     return 

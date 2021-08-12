@@ -1,0 +1,25 @@
+lr: 0.0002
+betas: [0.5, 0.999]
+lambda_: 100
+end_epoch: 200
+in_channels: 3
+out_channels: 3
+ngf: 64
+ndf: 64
+n_layers: 3
+gap: 0
+decay_step: 100
+start_decay: 99
+print_freq: 100
+dataset: 'facades'
+batch_size: 1
+num_workers: 4
+save_freq: 5
+resume: false
+save_path: 'saved_models/'
+use_cuda: true
+gpu_id: 1
+dstype: 1
+istrain: True
+netG_type: 'Unet'
+netD_type: Markovian

@@ -1,11 +1,14 @@
 import torch 
 import numpy as np
 from torch import nn
-from methods import weight_init
+from models.methods import weight_init
 
 
 class G_Unet(nn.Module): # UNet
-	def __init__(self, input_c, output_c, ngf):
+	def __init__(self, config):
+		input_c = config['in_channels']
+		output_c = config['out_channels']
+		ngf = config['ngf']
 		super(G_Unet, self).__init__()
 		self.encoder_1 = nn.Conv2d(input_c, ngf, 4, stride = 2, padding = 1, bias = False)
 		self.encoder_2 = nn.Sequential(nn.LeakyReLU(0.2, True),

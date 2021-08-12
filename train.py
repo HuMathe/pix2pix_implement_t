@@ -3,10 +3,10 @@ from header import *
 
 config_path = 'config/facades_train_config.yaml'
 
-print("loading config from: %s"%config_path)
+print(" loading config from : %s"%config_path)
 with open(config_path, 'rb') as f:
 	config = f.read()
-config = load(config)
+config = yaml.load(config, Loader = yaml.FullLoader)
 print_config(config)
 use_cuda = torch.cuda.is_available()
 if config['use_cuda'] and not use_cuda:
