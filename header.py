@@ -4,6 +4,7 @@ from models import  netModel
 from data import fetch_data
 from config.loader import print_config
 import os
+import cv2
 
 import torch
 from torch import nn

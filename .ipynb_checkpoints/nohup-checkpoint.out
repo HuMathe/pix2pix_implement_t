@@ -1,0 +1,28 @@
+ loading config from : config/facades_train_config.yaml
+                  lr : 0.0002
+               betas : [0.5, 0.999]
+             lambda_ : 100
+           end_epoch : 200
+         in_channels : 3
+        out_channels : 3
+                 ngf : 64
+                 ndf : 64
+            n_layers : 3
+                 gap : 0
+          decay_step : 100
+         start_decay : 99
+          print_freq : 100
+             dataset : acades
+          batch_size : 1
+         num_workers : 4
+           save_freq : 5
+              resume : False
+           save_path : saved_models/
+            use_cuda : True
+              gpu_id : 5
+              dstype : 1
+             istrain : True
+           netG_type : Unet
+           netD_type : Markovian
+training...
+eopch [  1/200]: 
