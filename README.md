@@ -1,5 +1,5 @@
 # pix2pix_implement_t
-an implement of pix2pix model ([original paper](https://arxiv.org/abs/1611.07004))
+an implement of pix2pix model on PyTorch([original paper](https://arxiv.org/abs/1611.07004))
 
 trained on facades, with a few images deleted (saved in [acades](datasets/acades))
 
