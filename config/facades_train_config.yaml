@@ -18,7 +18,7 @@ save_freq: 5
 resume: false
 save_path: 'saved_models/'
 use_cuda: true
-gpu_id: 5
+gpu_id: 0
 dstype: 1
 istrain: True
 netG_type: 'Unet'
